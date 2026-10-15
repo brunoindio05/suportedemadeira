@@ -4,9 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mini Cavalete de Madeira para seus Calendários</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1388998389231992');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1388998389231992&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FBF1EA;
@@ -16,8 +33,8 @@
   --wood:#D9B98A;
   --ink:#3A2A28;
   --muted:#7A625D;
-  --cta:#EE4D2D;
-  --cta-dark:#C93B1E;
+  --cta:#16a34a;
+  --cta-dark:#0f7a35;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -63,7 +80,7 @@ h2{font-size:24px;font-weight:600;color:var(--ink);margin-bottom:14px}
   box-shadow:0 6px 0 var(--cta-dark);
   transition:transform .08s ease, box-shadow .08s ease;
 }
-.btn:hover{background:#F45B3B}
+.btn:hover{background:#1db954}
 .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-dark)}
 .btn:focus-visible{outline:3px solid var(--rose-dark);outline-offset:3px}
 .cta-block{margin-top:26px}
@@ -98,12 +115,155 @@ section{margin-top:46px}
   .photo{animation:rise .6s ease both}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
+
+/* ---- Etapa 1: oferta dos moldes ---- */
+[hidden]{display:none !important}
+.badge-wrap{display:flex;justify-content:center;margin:26px 0 0}
+.badge{
+  width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle at 30% 25%, #E5B3B0, var(--rose) 70%);
+  color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px rgba(142,79,85,.28), inset 0 0 0 6px rgba(255,255,255,.35);
+  text-align:center;
+}
+.badge b{font-family:'Fraunces',Georgia,serif;font-size:56px;line-height:1;font-weight:800}
+.badge span{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+.price-box{
+  margin-top:26px;background:#fff;border:2px dashed var(--rose);
+  border-radius:22px;padding:22px 20px;text-align:center;
+}
+.price-box .kit{font-weight:700;color:var(--muted);font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+.price-box .price{font-family:'Fraunces',Georgia,serif;font-size:56px;font-weight:800;color:var(--rose-dark);line-height:1.1;margin:4px 0}
+.price-box .price small{font-size:26px;font-weight:600;margin-right:4px}
+.price-box .sub{color:var(--muted);font-size:15px}
+.checks{list-style:none;display:grid;gap:10px}
+.checks li{background:#fff;border-radius:12px;padding:12px 16px 12px 46px;position:relative;font-weight:600}
+.checks li::before{
+  content:"";position:absolute;left:16px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;
+  background:var(--rose-dark);
+}
+.checks li::after{
+  content:"";position:absolute;left:22px;top:50%;width:5px;height:9px;margin-top:-6px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.bonus-list{list-style:none;counter-reset:b;display:grid;gap:10px}
+.bonus-list li{
+  counter-increment:b;background:var(--panel);border-radius:12px;
+  padding:12px 16px 12px 52px;position:relative;font-weight:600;
+}
+.bonus-list li::before{
+  content:counter(b);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;background:#fff;color:var(--rose-dark);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+}
+.bonus-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.bonus-title h2{margin:0}
+.free{background:#16a34a;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
+.skip{
+  display:block;margin:26px auto 0;background:none;border:0;cursor:pointer;
+  font:inherit;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;
+  padding:10px;
+}
+.skip:hover{color:var(--rose-dark)}
+.skip:focus-visible{outline:3px solid var(--rose-dark);outline-offset:3px;border-radius:6px}
+
+.hero-img{width:100%;max-width:400px;margin:26px auto 0;border-radius:24px;overflow:hidden;background:var(--panel);aspect-ratio:1/1}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.lead-below{margin-top:22px;text-align:center}
+#stage-moldes>.tag{display:table;margin-left:auto;margin-right:auto}
+#stage-moldes>h1{text-align:center}
+
+.offer-card{
+  margin-top:46px;background:#FFF8F4;border:2px dashed var(--rose);
+  border-radius:28px;padding:26px 20px 22px;text-align:center;
+}
+.offer-title{font-size:22px;text-transform:uppercase;letter-spacing:.01em;color:var(--rose-dark);margin-bottom:6px}
+.offer-sub{color:var(--muted);font-size:15px}
+.offer-old{margin-top:22px;color:#B08A85;text-decoration:line-through;font-weight:700;font-size:16px}
+.offer-price{font-family:'Nunito Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:800;font-size:56px;line-height:1.05;color:#16a34a}
+.offer-today{margin-top:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.offer-list{list-style:none;display:grid;gap:11px;margin:22px 0 24px;text-align:left}
+.offer-list li{position:relative;padding-left:32px;font-size:15.5px;line-height:1.35}
+.offer-list li.strong{font-weight:800}
+.offer-list li.star{font-weight:700;color:var(--rose-dark)}
+.offer-list li.chk::before{
+  content:"";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;
+  border:2px solid var(--rose);
+}
+.offer-list li.chk::after{
+  content:"";position:absolute;left:6px;top:4px;width:4px;height:8px;
+  border:solid var(--rose);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.offer-list li.star::before{content:"\2605";position:absolute;left:0;top:-1px;font-size:20px;color:#F5A623}
 </style>
 </head>
 <body>
 <main class="wrap">
 
+<!-- ETAPA 1: MOLDES -->
+<div id="stage-moldes">
+
   <span class="tag">Espere! Você também pode gostar disso:</span>
+  <h1>+450 moldes de caixas para sua papelaria</h1>
+
+  <div class="hero-img">
+    <img src="img/capa.webp" alt="+450 moldes de caixas e embalagens" width="1080" height="1080">
+  </div>
+
+  <p class="lead lead-below">Moldes prontos para personalizar, imprimir e montar. Todos editáveis no Canva.</p>
+
+  <section>
+    <h2>O que você recebe</h2>
+    <ul class="checks">
+      <li>+450 moldes de caixas e embalagens</li>
+      <li>Arquivos em SVG, PDF, PNG e DXF</li>
+      <li>Todos os moldes editáveis no Canva</li>
+      <li>Biblioteca organizada</li>
+      <li>Acesso imediato e pagamento único</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="bonus-title"><h2>6 bônus inclusos</h2><span class="free">Grátis</span></div>
+    <ol class="bonus-list">
+      <li>Pack de editáveis no Canva</li>
+      <li>Banco de desenhos e ilustrações</li>
+      <li>Guia prático de precificação</li>
+      <li>Saquinhos personalizados P, M e G</li>
+      <li>Moldes para festas e casamentos</li>
+      <li>Caixas para cosméticos e perfumes</li>
+    </ol>
+  </section>
+
+  <div class="offer-card">
+    <h2 class="offer-title">+450 moldes + todos os bônus</h2>
+    <p class="offer-sub">Nossa opção mais completa.</p>
+    <div class="offer-old">De R$ 97,00</div>
+    <div class="offer-price">R$ 37</div>
+    <div class="offer-today">Hoje por R$ 37 • Pagamento único • Sem mensalidades</div>
+    <ul class="offer-list">
+      <li class="chk strong">+450 moldes de caixas</li>
+      <li class="chk">Arquivos em diferentes formatos</li>
+      <li class="chk">Acesso vitalício</li>
+      <li class="chk">Biblioteca organizada</li>
+      <li class="star">Pack Editáveis no Canva</li>
+      <li class="star">Banco de Desenhos e Ilustrações</li>
+      <li class="star">Guia de Precificação</li>
+      <li class="star">Sacolinhas P, M e G</li>
+      <li class="star">Moldes para Festas e Casamentos</li>
+      <li class="star">Caixas para Cosméticos e Perfumes</li>
+    </ul>
+    <a class="btn" href="https://ggcheckout.app/checkout/v5/5907d105-e8f3-4a4b-8aa4-b89387ae21bf" rel="noopener">Quero o kit por R$ 37</a>
+  </div>
+
+  <button type="button" class="skip" id="skipMoldes">Não, obrigado. Quero ver a próxima oferta</button>
+
+</div>
+
+<!-- ETAPA 2: SUPORTE DE MADEIRA -->
+<div id="stage-suporte" hidden>
+
+  <span class="tag">Uma última sugestão para você:</span>
   <h1>Seu calendário pronto, agora em pé na mesa</h1>
   <p class="lead">Um mini cavalete de madeira para expor seus calendários, cartões, menus e fotos com um acabamento de verdade.</p>
 
@@ -156,6 +316,19 @@ section{margin-top:46px}
     <a class="btn" href="https://s.shopee.com.br/3B7tu0prJ6" target="_blank" rel="noopener sponsored">Quero meu cavalete</a>
   </div>
 
+</div>
+
 </main>
+<script>
+(function(){
+  var b=document.getElementById("skipMoldes");
+  if(!b)return;
+  b.addEventListener("click",function(){
+    document.getElementById("stage-moldes").hidden=true;
+    document.getElementById("stage-suporte").hidden=false;
+    window.scrollTo({top:0,behavior:"auto"});
+  });
+})();
+</script>
 </body>
 </html>
