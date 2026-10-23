@@ -26,15 +26,15 @@ src="https://www.facebook.com/tr?id=1388998389231992&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBF1EA;
-  --panel:#F4DDD2;
-  --rose:#C98F8F;
-  --rose-dark:#8E4F55;
-  --wood:#D9B98A;
-  --ink:#3A2A28;
-  --muted:#7A625D;
-  --cta:#16a34a;
-  --cta-dark:#0f7a35;
+  --bg:#FFF8EA;
+  --panel:#FFF1D6;
+  --rose:#C1395F;
+  --rose-dark:#C1395F;
+  --ink:#2B2118;
+  --muted:#5E5043;
+  --cta:#3FA772;
+  --cta-dark:#2F8A5C;
+  --line:#E9D6B0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -46,7 +46,8 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:560px;margin:0 auto;padding:28px 20px 56px}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 20px 56px}
+#stage-suporte{max-width:560px;margin:0 auto}
 h1,h2{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-0.01em}
 h1{font-size:clamp(30px,8vw,40px);font-weight:800;color:var(--rose-dark)}
 h2{font-size:24px;font-weight:600;color:var(--ink);margin-bottom:14px}
@@ -73,16 +74,16 @@ h2{font-size:24px;font-weight:600;color:var(--ink);margin-bottom:14px}
   text-decoration:none;
   background:var(--cta);
   color:#fff;
-  font-weight:700;
+  font-weight:800;
   font-size:19px;
   padding:18px 22px;
   border-radius:14px;
-  box-shadow:0 6px 0 var(--cta-dark);
-  transition:transform .08s ease, box-shadow .08s ease;
+  box-shadow:0 3px 0 var(--cta-dark);
+  transition:transform .08s ease, box-shadow .08s ease, background .15s ease;
 }
-.btn:hover{background:#1db954}
-.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-dark)}
-.btn:focus-visible{outline:3px solid var(--rose-dark);outline-offset:3px}
+.btn:hover{background:#369663}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--cta-dark)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .cta-block{margin-top:26px}
 .cta-note{margin-top:14px;text-align:center;font-size:14px;color:var(--muted)}
 
@@ -109,165 +110,188 @@ section{margin-top:46px}
 .why strong{color:var(--ink)}
 
 @media (prefers-reduced-motion:no-preference){
-  .btn{animation:pulse 1.8s ease-in-out infinite}
-  .btn:hover,.btn:active{animation:none}
-  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
   .photo{animation:rise .6s ease both}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
 
-/* ---- Etapa 1: oferta dos moldes ---- */
+/* ---- Etapa 1: oferta do Pack ---- */
 [hidden]{display:none !important}
-.badge-wrap{display:flex;justify-content:center;margin:26px 0 0}
-.badge{
-  width:190px;height:190px;border-radius:50%;
-  background:radial-gradient(circle at 30% 25%, #E5B3B0, var(--rose) 70%);
-  color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 14px 30px rgba(142,79,85,.28), inset 0 0 0 6px rgba(255,255,255,.35);
-  text-align:center;
-}
-.badge b{font-family:'Fraunces',Georgia,serif;font-size:56px;line-height:1;font-weight:800}
-.badge span{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
-.price-box{
-  margin-top:26px;background:#fff;border:2px dashed var(--rose);
-  border-radius:22px;padding:22px 20px;text-align:center;
-}
-.price-box .kit{font-weight:700;color:var(--muted);font-size:15px;text-transform:uppercase;letter-spacing:.08em}
-.price-box .price{font-family:'Fraunces',Georgia,serif;font-size:56px;font-weight:800;color:var(--rose-dark);line-height:1.1;margin:4px 0}
-.price-box .price small{font-size:26px;font-weight:600;margin-right:4px}
-.price-box .sub{color:var(--muted);font-size:15px}
-.checks{list-style:none;display:grid;gap:10px}
-.checks li{background:#fff;border-radius:12px;padding:12px 16px 12px 46px;position:relative;font-weight:600}
-.checks li::before{
-  content:"";position:absolute;left:16px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;
-  background:var(--rose-dark);
-}
-.checks li::after{
-  content:"";position:absolute;left:22px;top:50%;width:5px;height:9px;margin-top:-6px;
-  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
-}
-.bonus-list{list-style:none;counter-reset:b;display:grid;gap:10px}
-.bonus-list li{
-  counter-increment:b;background:var(--panel);border-radius:12px;
-  padding:12px 16px 12px 52px;position:relative;font-weight:600;
-}
-.bonus-list li::before{
-  content:counter(b);position:absolute;left:14px;top:50%;transform:translateY(-50%);
-  width:26px;height:26px;border-radius:50%;background:#fff;color:var(--rose-dark);
-  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
-}
-.bonus-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.bonus-title h2{margin:0}
-.free{background:#16a34a;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
-.skip{
-  display:block;margin:26px auto 0;background:none;border:0;cursor:pointer;
-  font:inherit;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;
-  padding:10px;
-}
-.skip:hover{color:var(--rose-dark)}
-.skip:focus-visible{outline:3px solid var(--rose-dark);outline-offset:3px;border-radius:6px}
+#stage-moldes h1,#stage-moldes h2{color:var(--rose)}
+#stage-moldes h2{font-size:clamp(24px,6vw,32px);font-weight:800;margin-bottom:12px}
+#stage-moldes section{margin-top:56px}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 24px}
 
-.hero-img{width:100%;max-width:400px;margin:26px auto 0;border-radius:24px;overflow:hidden;background:var(--panel);aspect-ratio:1/1}
-.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
-.lead-below{margin-top:22px;text-align:center}
-#stage-moldes>.tag{display:table;margin-left:auto;margin-right:auto}
-#stage-moldes>h1{text-align:center}
+
+.hero{display:grid;gap:26px;align-items:center}
+.hero-copy{text-align:center}
+#stage-moldes .hero h1{font-size:clamp(30px,7.5vw,46px);font-weight:800;line-height:1.1}
+.hero .lead{margin-top:14px;font-size:19px;color:var(--ink)}
+.pills{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0 24px}
+.pills li{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px}
+.hero .btn{max-width:420px;margin:0 auto}
+
+.ph{
+  aspect-ratio:1/1;width:100%;
+  background:var(--panel);border:2px dashed var(--line);border-radius:20px;
+  overflow:hidden;
+}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-media{max-width:480px;width:100%;margin:0 auto}
+.hero-media img{display:block;width:100%;max-width:480px;height:auto;aspect-ratio:1/1;margin:0 auto;border-radius:20px}
+
+#stage-moldes .problem{text-align:center;max-width:680px;margin-left:auto;margin-right:auto;background:var(--panel);border-radius:24px;padding:28px 22px}
+.problem p{font-size:18px}
+
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 20px}
+.card .num{display:inline-block;background:var(--rose);color:#fff;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.card h3{font-family:'Fraunces',Georgia,serif;font-size:24px;line-height:1.15;color:var(--ink);margin-bottom:8px}
+.card p{color:var(--muted)}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags li{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:700}
+
+.benefits{display:grid;gap:12px}
+.benefit{background:#fff;border:1px solid var(--line);border-left:5px solid var(--rose);border-radius:6px 16px 16px 6px;padding:16px 18px}
+.benefit h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.benefit p{color:var(--muted);font-size:16px}
 
 .offer-card{
-  margin-top:46px;background:#FFF8F4;border:2px dashed var(--rose);
-  border-radius:28px;padding:26px 20px 22px;text-align:center;
+  margin:56px auto 0;background:#fff;border:3px solid var(--rose);
+  border-radius:28px;padding:28px 20px 24px;text-align:center;max-width:620px;
 }
-.offer-title{font-size:22px;text-transform:uppercase;letter-spacing:.01em;color:var(--rose-dark);margin-bottom:6px}
-.offer-sub{color:var(--muted);font-size:15px}
-.offer-old{margin-top:22px;color:#B08A85;text-decoration:line-through;font-weight:700;font-size:16px}
-.offer-price{font-family:'Nunito Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:800;font-size:56px;line-height:1.05;color:#16a34a}
-.offer-today{margin-top:6px;font-size:13px;font-weight:700;color:var(--muted)}
-.offer-list{list-style:none;display:grid;gap:11px;margin:22px 0 24px;text-align:left}
-.offer-list li{position:relative;padding-left:32px;font-size:15.5px;line-height:1.35}
-.offer-list li.strong{font-weight:800}
-.offer-list li.star{font-weight:700;color:var(--rose-dark)}
-.offer-list li.chk::before{
-  content:"";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;
-  border:2px solid var(--rose);
+#stage-moldes .offer-title{font-size:clamp(24px,6vw,30px)}
+.timer{display:inline-flex;align-items:center;gap:10px;margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:700;font-size:15px}
+.timer strong{font-size:24px;line-height:1;color:var(--rose);font-variant-numeric:tabular-nums}
+.offer-list{list-style:none;display:grid;gap:11px;margin:22px 0 22px;text-align:left}
+.offer-list li{position:relative;padding-left:32px;font-weight:700;line-height:1.35}
+.offer-list li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--cta)}
+.offer-list li::after{content:"";position:absolute;left:7px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+#oferta{scroll-margin-top:16px}
+.offer-price{font-weight:800;font-size:56px;line-height:1.05;color:var(--cta-dark)}
+.offer-once{margin-top:4px;font-size:15px;font-weight:700;color:var(--muted)}
+.offer-card .btn{margin-top:22px}
+.offer-note{margin-top:14px;font-size:14px;color:var(--muted)}
+
+.faq{max-width:680px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:10px}
+.faq summary{cursor:pointer;font-weight:800;padding:16px 18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--rose);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:14px}
+.faq details p{padding:0 18px 16px;color:var(--muted)}
+
+#stage-moldes .final{text-align:center;max-width:620px;margin-left:auto;margin-right:auto}
+.final .btn{margin-top:22px}
+.skip{
+  display:block;margin:22px auto 0;background:none;border:0;cursor:pointer;
+  font:inherit;font-size:16px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;
+  padding:12px;
 }
-.offer-list li.chk::after{
-  content:"";position:absolute;left:6px;top:4px;width:4px;height:8px;
-  border:solid var(--rose);border-width:0 2px 2px 0;transform:rotate(45deg);
+.skip:hover{color:var(--rose)}
+.skip:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+
+@media (min-width:720px){
+  .hero{grid-template-columns:1.1fr .9fr;gap:40px}
+  .hero-copy{text-align:left}
+  .pills{justify-content:flex-start}
+  .hero .btn{margin:0}
+  .cards{grid-template-columns:1fr 1fr}
+  .benefits{grid-template-columns:1fr 1fr}
 }
-.offer-list li.star::before{content:"\2605";position:absolute;left:0;top:-1px;font-size:20px;color:#F5A623}
-.thanks{background:#E8F6EC;border:2px solid #16a34a;border-radius:20px;padding:20px 18px;text-align:center;margin-bottom:34px}
-.thanks-title{font-size:24px;color:#0f7a35;margin-bottom:6px}
-.thanks-text{color:var(--ink);font-size:16px}
-.thanks-spam{margin-top:12px;background:#fff;border:2px dashed #16a34a;border-radius:12px;padding:10px 12px;color:#0f7a35;font-size:16px;line-height:1.4}
-.hero-img wistia-player{display:block;width:100%}
 </style>
 </head>
 <body>
 <main class="wrap">
 
-<!-- ETAPA 1: MOLDES -->
+<!-- ETAPA 1: PACK DE DIVULGACAO + CALENDARIOS EDITAVEIS (R$ 17,90) -->
 <div id="stage-moldes">
-  <div class="thanks">
-    <h2 class="thanks-title">Obrigado pela sua compra!</h2>
-    <p class="thanks-text">Seu acesso está a caminho do seu e-mail.</p>
-    <p class="thanks-spam"><strong>Não encontrou? Verifique a caixa de spam e a aba Promoções.</strong></p>
-  </div>
+  <!-- 1. HERO -->
+  <header class="hero">
+    <div class="hero-copy">
+      <h1>Saia na frente da concorrência: não perca tempo criando artes de divulgação do zero</h1>
+      <p class="lead">Personalize seus calendários como quiser. São dois produtos dentro de 1 só.</p>
+      <ul class="pills">
+        <li>+20 artes de divulgação</li>
+        <li>+10 calendários editáveis</li>
+        <li>Tudo editável no Canva</li>
+      </ul>
+      <a class="btn" href="#oferta" rel="noopener">SIM! QUERO ADICIONAR O PACK</a>
+    </div>
+    <div class="hero-media">
+      <img src="img/mockup.webp" alt="Pack de Divulgação com artes prontas e calendários editáveis 2027 para personalizar" width="1080" height="1080" fetchpriority="high">
+    </div>
+  </header>
 
-  <span class="tag">Espere! Você também pode gostar disso:</span>
-  <h1>+450 moldes de caixas para sua papelaria</h1>
-
-  <div class="hero-img">
-    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/8oiqep35y5.js" async type="module"></script><style>wistia-player[media-id='8oiqep35y5']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8oiqep35y5/swatch'); display: block; filter: blur(5px); padding-top:100.0%; }</style>
-    <wistia-player media-id="8oiqep35y5" seo="false" aspect="1.0"></wistia-player>
-  </div>
-
-  <p class="lead lead-below">Moldes prontos para personalizar, imprimir e montar. Todos editáveis no Canva.</p>
-
-  <section>
-    <h2>O que você recebe</h2>
-    <ul class="checks">
-      <li>+450 moldes de caixas e embalagens</li>
-      <li>Arquivos em SVG, PDF, PNG e DXF</li>
-      <li>Todos os moldes editáveis no Canva</li>
-      <li>Biblioteca organizada</li>
-      <li>Acesso imediato e pagamento único</li>
-    </ul>
+  <!-- 2. PROBLEMA -->
+  <section class="problem">
+    <h2>Não perca tempo criando cada divulgação do zero!</h2>
+    <p>Criar imagens toda semana toma tempo e atrasa as suas publicações. Com artes prontas para editar, você só personaliza e publica.</p>
   </section>
 
+  <!-- 3. DOIS PRODUTOS EM UM -->
   <section>
-    <div class="bonus-title"><h2>6 bônus inclusos</h2><span class="free">Grátis</span></div>
-    <ol class="bonus-list">
-      <li>Pack de editáveis no Canva</li>
-      <li>Banco de desenhos e ilustrações</li>
-      <li>Guia prático de precificação</li>
-      <li>Saquinhos personalizados P, M e G</li>
-      <li>Moldes para festas e casamentos</li>
-      <li>Caixas para cosméticos e perfumes</li>
-    </ol>
+    <div class="sec-head"><h2>Dois produtos em um só pacote</h2></div>
+    <div class="cards">
+      <article class="card">
+        <span class="num">Produto 1</span>
+        <h3>+20 artes de divulgação</h3>
+        <p>Artes prontas para divulgar seus produtos, todas editáveis no Canva.</p>
+      </article>
+      <article class="card">
+        <span class="num">Produto 2</span>
+        <h3>+10 calendários editáveis</h3>
+        <p>Calendários para personalizar como quiser no Canva, nestes temas:</p>
+        <ul class="tags">
+          <li>Florais</li><li>Coração</li><li>Professora</li><li>Sereias</li><li>Cristão</li><li>Viagem</li>
+          <li>Dentista</li><li>Médico</li><li>Casa</li><li>Bombeiros</li><li>Autocuidado</li>
+        </ul>
+      </article>
+    </div>
   </section>
 
-  <div class="offer-card">
-    <h2 class="offer-title">+450 moldes + todos os bônus</h2>
-    <p class="offer-sub">Nossa opção mais completa.</p>
-    <div class="offer-old">De R$ 67,00</div>
-    <div class="offer-price">R$ 19,90</div>
-    <div class="offer-today">Hoje por R$ 19,90 • Pagamento único • Sem mensalidades</div>
+  <!-- 5. BENEFICIOS -->
+  <section>
+    <div class="benefits">
+      <div class="benefit"><h3>Economize tempo</h3><p>Artes prontas para você só ajustar e publicar.</p></div>
+      <div class="benefit"><h3>Diversifique suas publicações</h3><p>Mais opções de artes para variar o seu conteúdo.</p></div>
+      <div class="benefit"><h3>Personalize como quiser</h3><p>Edite cores, textos e detalhes no Canva.</p></div>
+      <div class="benefit"><h3>Apresente melhor seu catálogo</h3><p>Mostre seus calendários com artes organizadas.</p></div>
+    </div>
+  </section>
+
+  <!-- 6. OFERTA -->
+  <div class="offer-card" id="oferta">
+    <h2 class="offer-title">Adicione o Pack ao seu Kit Calendários 2027</h2>
+    <div class="timer" role="timer" aria-label="Tempo restante da oferta"><span>Oferta disponível por</span><strong id="timer">10:00</strong></div>
     <ul class="offer-list">
-      <li class="chk strong">+450 moldes de caixas</li>
-      <li class="chk">Arquivos em diferentes formatos</li>
-      <li class="chk">Acesso vitalício</li>
-      <li class="chk">Biblioteca organizada</li>
-      <li class="star">Pack Editáveis no Canva</li>
-      <li class="star">Banco de Desenhos e Ilustrações</li>
-      <li class="star">Guia de Precificação</li>
-      <li class="star">Sacolinhas P, M e G</li>
-      <li class="star">Moldes para Festas e Casamentos</li>
-      <li class="star">Caixas para Cosméticos e Perfumes</li>
+      <li>+20 artes de divulgação editáveis no Canva</li>
+      <li>+10 calendários editáveis no Canva</li>
     </ul>
-    <a class="btn" href="https://ggcheckout.app/checkout/v5/5907d105-e8f3-4a4b-8aa4-b89387ae21bf" rel="noopener">Quero o kit por R$ 19,90</a>
+    <div class="offer-price">R$ 17,90</div>
+    <div class="offer-once">Pagamento único</div>
+    <a class="btn" href="https://pay.wiapy.com/AhfFCYF3b6Kv" rel="noopener">SIM! QUERO ADICIONAR O PACK</a>
+    <p class="offer-note">Você recebe o acesso depois da confirmação do pagamento.</p>
   </div>
 
-  <button type="button" class="skip" id="skipMoldes">Não, obrigado. Quero ver a próxima oferta</button>
+  <!-- 7. FAQ -->
+  <section>
+    <div class="sec-head"><h2>Perguntas frequentes</h2></div>
+    <div class="faq">
+      <details><summary>O que vou receber?</summary><p>Dois produtos em um: +20 artes de divulgação e +10 calendários editáveis, todos para editar no Canva.</p></details>
+      <details><summary>Preciso de conta no Canva?</summary><p>Sim, para editar é preciso ter uma conta no Canva.</p></details>
+      <details><summary>Posso personalizar os calendários?</summary><p>Sim. Os modelos são editáveis no Canva, dentro dos recursos da plataforma.</p></details>
+      <details><summary>Isso substitui o Kit Calendários 2027?</summary><p>Não. O pack soma artes de divulgação e calendários editáveis ao seu kit.</p></details>
+      <details><summary>Como recebo?</summary><p>Depois da confirmação do pagamento, você recebe um PDF com os links de acesso do Canva.</p></details>
+    </div>
+  </section>
+
+  <!-- 8. DECISAO FINAL -->
+  <section class="final">
+    <h2>Seus calendários estão prontos. Facilite agora a divulgação!</h2>
+    <a class="btn" href="https://pay.wiapy.com/AhfFCYF3b6Kv" rel="noopener">SIM! QUERO ADICIONAR O PACK</a>
+    <button type="button" class="skip" id="skipMoldes">Não, obrigado. Quero seguir sem o pack</button>
+  </section>
 
 </div>
 
@@ -335,10 +359,25 @@ section{margin-top:46px}
   var b=document.getElementById("skipMoldes");
   if(!b)return;
   b.addEventListener("click",function(){
-    document.getElementById("stage-moldes").hidden=true;
-    document.getElementById("stage-suporte").hidden=false;
-    window.scrollTo({top:0,behavior:"auto"});
+    window.location.href="https://sitecrispapelaria.vercel.app/login.html?next=index.html";
   });
+})();
+(function(){
+  var el=document.getElementById("timer");
+  if(!el)return;
+  var KEY="packTimerEnd",end=0;
+  try{end=parseInt(sessionStorage.getItem(KEY),10)||0}catch(e){}
+  if(!end){
+    end=Date.now()+10*60*1000;
+    try{sessionStorage.setItem(KEY,String(end))}catch(e){}
+  }
+  function tick(){
+    var left=Math.max(0,Math.round((end-Date.now())/1000));
+    var m=Math.floor(left/60),s=left%60;
+    el.textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+    if(left>0)setTimeout(tick,250);
+  }
+  tick();
 })();
 </script>
 </body>
